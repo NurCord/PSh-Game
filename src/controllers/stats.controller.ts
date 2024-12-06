@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import PlayerStat from "../models/PlayerStat";
+import { PlayerStat } from "../models";
 
 export const getTopPlayerStats = async (
   _req: Request,

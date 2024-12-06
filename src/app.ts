@@ -1,5 +1,5 @@
 import express from "express";
-import router from "./routes/playerStats";
+import router from "./routes/player-stats.route";
 import sequelize from "./db";
 
 const app = express();
