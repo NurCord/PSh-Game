@@ -1,9 +1,12 @@
 import express from "express";
 import router from "./routes/player-stats.route";
 import sequelize from "./db";
+import cors from "cors";
 
 const app = express();
 const port = process.env.PORT || 3000;
+
+app.use(cors());
 
 app.use(express.json());
 
