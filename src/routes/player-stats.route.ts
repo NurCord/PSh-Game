@@ -1,6 +1,5 @@
 import { Router } from "express";
-import { getTopPlayerStats } from "../controllers/statsController";
-import { createStats } from "../controllers/createStats";
+import { createStats, getTopPlayerStats } from "../controllers";
 
 const router = Router();
 
