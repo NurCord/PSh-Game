@@ -107,6 +107,8 @@ DB_NAME=your_database_name
 DB_USER=your_database_user
 DB_PASSWORD=your_database_password
 DB_HOST=your_database_host
+DB_PORT=3306
+PORT=3000
 RANDOM_USER_API_URL=https://randomuser.me/api
 ```
 
