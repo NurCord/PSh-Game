@@ -1,14 +1,11 @@
 import { Request, Response } from "express";
 import { createPlayerStats } from "../services";
 
-export const createStats = async (
-  _req: Request,
-  res: Response
-): Promise<any> => {
+export const createStats = async (_req: Request, res: Response) => {
   try {
-    await createPlayerStats()
-    return res.status(200).json({ message: "Stats generated successfully" });
+    await createPlayerStats();
+    res.status(201).json({ message: "Stats generated successfully" });
   } catch (error) {
-    return res.status(500).send("Internal Server Error");
+    res.status(500).send("Error generating stats");
   }
 };

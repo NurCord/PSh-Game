@@ -47,15 +47,16 @@ Puedes acceder a la API desplegada en Render a través del siguiente enlace: [ht
 
 ## Endpoints
 
-### POST /api/create-stats
+### POST /api/stats
 
 Genera estadísticas aleatorias de jugadores.
 
-- URL: /api/create-stats
+- URL: /api/stats
+- Posibles parámetros: limit (por defecto es 10)
 - Método: POST
 - Respuestas:
-  - `200 OK`: Si las estadísticas se generaron correctamente.
-  - `500 Internal Server Error`: Si hubo un error al generar las estadísticas.
+  - `201 Stats generated successfully`: Si las estadísticas se generaron correctamente.
+  - `500 Error generating stats`: Si hubo un error al generar las estadísticas.
 
 ### GET /api/stats
 
@@ -64,8 +65,8 @@ Obtiene las 10 mejores puntuaciones de los jugadores.
 - URL: /api/stats
 - Método: GET
 - Respuestas:
-  - `200 OK`: Devuelve las mejores puntuaciones en formato JSON.
-  - `500 Internal Server Error`: Si hubo un error al obtener las estadísticas.
+  - `200`: Devuelve las mejores puntuaciones en formato JSON.
+  - `500 Error getting top player stats`: Si hubo un error al obtener las estadísticas.
 
 ## Estructura del Proyecto
 

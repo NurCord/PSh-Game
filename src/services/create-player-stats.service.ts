@@ -5,6 +5,8 @@ export const createPlayerStats = async () => {
   try {
     const numberOfPlayers = Math.floor(Math.random() * 11);
 
+    const playersToCreate = [];
+
     for (let i = 0; i < numberOfPlayers; i++) {
       const user = (await axios.get(process.env.RANDOM_USER_API_URL as string))
         .data.results[0];
@@ -14,7 +16,7 @@ export const createPlayerStats = async () => {
       } = user;
       const score = Math.floor(Math.random() * 100) + 1;
 
-      await PlayerStat.create({
+      playersToCreate.push({
         creationDate: new Date(),
         nickname,
         playerId,
@@ -22,7 +24,8 @@ export const createPlayerStats = async () => {
         score,
       });
     }
+    await PlayerStat.bulkCreate(playersToCreate);
   } catch (error) {
-    throw new Error("Error al generar las estadísticas");
+    throw new Error("Error creating player stats");
   }
 };
